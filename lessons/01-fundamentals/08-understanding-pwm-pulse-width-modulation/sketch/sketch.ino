@@ -6,12 +6,14 @@
   TODO: write/paste your code for this lesson here.
 */
 
-void setup() {
-  // put your setup code here, to run once:
+int redpin=9,bright=127;
+ void setup()
+ {
+   pinMode(redpin, OUTPUT);
+ }
 
+ void loop()
+ {
+   analogWrite(redpin,bright);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}
