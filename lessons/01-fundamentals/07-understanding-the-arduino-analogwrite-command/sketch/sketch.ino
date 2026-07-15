@@ -6,12 +6,33 @@
   TODO: write/paste your code for this lesson here.
 */
 
-void setup() {
-  // put your setup code here, to run once:
+// int redpin=9,bright=255;
+// void setup()
+// {
+//   pinMode(redpin, OUTPUT);
+// }
 
+// void loop()
+// {
+//   analogWrite(redpin,bright);
+// }
+
+
+
+
+int redpin = 9;
+
+void setup() {
+  pinMode(redpin, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  for (int bright = 0; bright <= 255; bright++) {
+    analogWrite(redpin, bright);
+    delay(10); // smooth fade in
+  }
+  for (int bright = 255; bright >= 0; bright--) {
+    analogWrite(redpin, bright);
+    delay(10); // smooth fade out
+  }
 }
