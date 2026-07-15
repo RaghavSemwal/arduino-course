@@ -98,3 +98,4 @@ Too large → slow response, sluggish changes in voltage.
 RC filter design: Often combined with a resistor to form an RC low-pass filter for better control.
 
 Load dependency: The smoothing effect depends on what’s connected to the output (LED, motor, etc.).
+
