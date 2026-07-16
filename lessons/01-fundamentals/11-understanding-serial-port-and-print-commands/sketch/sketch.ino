@@ -7,11 +7,19 @@
 */
 
 void setup() {
-  // put your setup code here, to run once:
-
+  Serial.begin(9600); // Start serial communication at 9600 baud
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Example 1: Using Serial.print()
+  Serial.print("Hello ");
+  Serial.print("World ");
+  Serial.print(123);
+  delay(1000);
 
+  // Example 2: Using Serial.println()
+  Serial.println("Hello");
+  Serial.println("World");
+  Serial.println(123);
+  delay(2000);
 }
