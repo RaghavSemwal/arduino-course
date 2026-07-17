@@ -6,12 +6,35 @@
   TODO: write/paste your code for this lesson here.
 */
 
+// Step 1: Define variables
+
+int readpin = A3;        // Analog pin A3 will be used as input
+int readval;             // Stores the raw ADC value (0–1023)
+float v2 = 0;            // Stores the converted voltage value
+int delaytime = 500;     // Delay between readings in milliseconds
+
+// Step 2: Setup function runs once at the start
+
 void setup() {
-  // put your setup code here, to run once:
-
+  pinMode(readpin, INPUT);   // Configure A3 as input pin
+  Serial.begin(9600);        // Start Serial Monitor at 9600 baud rate
 }
 
+// Step 3: Loop function runs continuously
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Read the raw analog value (0–1023)
+  readval = analogRead(readpin);
 
+  // Convert raw value to voltage (0–5V)
+  // Formula: Voltage = (Reference Voltage / ADC Resolution) * raw value
+  // Reference Voltage = 5.0V, ADC Resolution = 1023 (10-bit ADC)
+  v2 = (5.0 / 1023.0) * readval;
+
+  // Print the voltage value to Serial Monitor
+  Serial.println(v2);
+
+  // Wait for 500 ms before next reading
+  delay(delaytime);
 }
+
+
