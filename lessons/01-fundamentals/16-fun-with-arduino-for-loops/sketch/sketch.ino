@@ -6,12 +6,30 @@
   TODO: write/paste your code for this lesson here.
 */
 
-void setup() {
-  // put your setup code here, to run once:
+// Fun with Arduino For Loops
+// Blink LEDs in sequence from pin 2 to pin 6
 
+int delayTime = 200;   // Delay between LED blinks (milliseconds)
+
+void setup() {
+  // Set pins 2 through 6 as OUTPUT
+  for (int pin = 2; pin <= 6; pin++) {
+    pinMode(pin, OUTPUT);
+  }
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Turn LEDs ON one by one
+  for (int pin = 2; pin <= 6; pin++) {
+    digitalWrite(pin, HIGH);   // Turn LED ON
+    delay(delayTime);          // Wait
+    digitalWrite(pin, LOW);    // Turn LED OFF
+  }
 
+  // Optional: reverse sequence (backwards blink)
+  for (int pin = 6; pin >= 2; pin--) {
+    digitalWrite(pin, HIGH);   // Turn LED ON
+    delay(delayTime);          // Wait
+    digitalWrite(pin, LOW);    // Turn LED OFF
+  }
 }
