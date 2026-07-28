@@ -130,10 +130,3 @@ if (mycolour = "red")   // This assigns, not compares
 
 ---
 
-If you want, I can also prepare:
-✨ A **PDF‑style study sheet**  
-✨ A **flowchart** of the program  
-✨ A **MCQ quiz** for practice  
-✨ A **handwritten‑style notes page**  
-
-Just tell me what you want next.
