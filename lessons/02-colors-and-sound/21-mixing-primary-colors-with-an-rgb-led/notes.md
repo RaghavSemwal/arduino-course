@@ -69,4 +69,4 @@
 
 ---
 
-Would you like me to also prepare a **comparison table** between the three methods (`map()`, integer division `/4`, and float scaling `(255.0/1023.0)*ADC`) so you can quickly see their pros and cons side by side?
+
