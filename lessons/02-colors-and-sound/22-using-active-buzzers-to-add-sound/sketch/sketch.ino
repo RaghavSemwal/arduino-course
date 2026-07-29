@@ -6,12 +6,27 @@
   TODO: write/paste your code for this lesson here.
 */
 
-void setup() {
-  // put your setup code here, to run once:
+// Define pin numbers
+int buzzPin = 3;     // Buzzer connected to digital pin 3
+int potPin = A2;     // Potentiometer connected to analog pin A2
+int potVal = 0;      // Variable to store potentiometer reading
 
+void setup() {
+  pinMode(buzzPin, OUTPUT);   // Set buzzer pin as output
+  pinMode(potPin, INPUT);     // Set potentiometer pin as input
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  potVal = analogRead(potPin);   // Read value from potentiometer (0–1023)
 
+  // If potentiometer value is greater than 100, turn buzzer ON
+  if (potVal > 100) {
+    digitalWrite(buzzPin, HIGH); // Activate buzzer
+    delay(1000);                 // Wait for 1 second
+  }
+  else {
+    digitalWrite(buzzPin, LOW);  // Deactivate buzzer
+    delay(1000);                 // Wait for 1 second
+  }
 }
+
