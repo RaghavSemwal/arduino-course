@@ -6,12 +6,36 @@
   TODO: write/paste your code for this lesson here.
 */
 
-void setup() {
-  // put your setup code here, to run once:
+// Simple Pushbutton Toggle Example
 
+const int buttonPin = 12;   // Pushbutton connected to pin 12
+const int ledPin = 8;       // LED connected to pin 8
+
+int newButtonState;         // Current button state
+int lastButtonState = LOW;  // Previous button state
+int ledState = LOW;         // LED state
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  newButtonState = digitalRead(buttonPin);
 
+  // Check for button press (transition from LOW to HIGH)
+  if (newButtonState == HIGH && lastButtonState == LOW) {
+    // Toggle LED state
+    if (ledState == LOW) {
+      digitalWrite(ledPin, HIGH);
+      ledState = HIGH;
+    } else {
+      digitalWrite(ledPin, LOW);
+      ledState = LOW;
+    }
+    delay(200); // Simple delay to avoid bouncing
+  }
+
+  // Update last button state
+  lastButtonState = newButtonState;
 }
